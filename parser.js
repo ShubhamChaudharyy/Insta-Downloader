@@ -24,7 +24,7 @@ app.get("/linkpage",function(req,res){
 
 app.post('/intermediate',function(req,res){
 	
-	 
+	 tag()
 	 async function tag(){
 	
 	var urlroot=req.body.url;
@@ -34,11 +34,12 @@ app.post('/intermediate',function(req,res){
    
     link=urx;
     console.log(urlroot);
-    res.redirect('/linkpage')
+    res.redirect(link)
     res.end()
  }
- tag()
+ 
 });
 
+port=process.env.PORT || 5000
 
-app.listen(process.env.PORT || 5000);
+app.listen(port);
